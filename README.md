@@ -50,6 +50,39 @@ This is a learning project, not production software.
 - Add a search bar and rating averages on the list pages
 
 ## Screenshots
-![Home](screenshots/home.png)
-![Events](screenshots/events.png)
-![Admin dashboard](screenshots/admin.png)
+
+**Home**
+![Home](screenshots/01_home.jpg)
+
+**About**
+![About](screenshots/02_about.png)
+
+**Events**
+![Events](screenshots/03_events.png)
+
+**Event details**
+![Event details](screenshots/04_event_details.png)
+
+**Activities**
+![Activities](screenshots/05_activities.png)
+
+**Activity details**
+![Activity details](screenshots/06_activity_details.png)
+
+**Reviews**
+![Reviews](screenshots/08_reviews.png)
+
+**Contact**
+![Contact](screenshots/07_contact.png)
+
+**Admin login**
+![Admin login](screenshots/09_admin_login.png)
+
+**Admin: add item**
+![Admin add item](screenshots/10_admin_add_item.jpg)
+
+**Admin: manage activities**
+![Admin activities](screenshots/11_admin_activities.jpg)
+
+**Admin: manage events**
+![Admin events](screenshots/12_admin_events.jpg)
