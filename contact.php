@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - AlUla</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero { position: relative; height: 60vh; background-image: url('https://img.freepik.com/premium-photo/alula-scenes-from-alulatourism_1048944-22128483.jpg?ga=GA1.1.1094011716.1728049875&semt=ais_hybrid&w=740'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4); }
+    .contact-section { padding: 4rem 2rem; max-width: 900px; margin: auto; background-color: #fff; border-radius: 8px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); }
+    .contact-section h2 { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; font-weight: 600; color: #333; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; padding: 2rem; border-radius: 8px; background-color: #f9f9f9; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+    .contact-form label { font-weight: bold; font-size: 1.1rem; color: #555; }
+    .contact-form input, .contact-form textarea { padding: 1rem; font-size: 1.1rem; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; transition: border-color 0.3s; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #f4a261; outline: none; }
+    .contact-form button { background-color: #f4a261; color: white; border: none; padding: 1rem; border-radius: 5px; font-size: 1.2rem; cursor: pointer; transition: background-color 0.3s ease; }
+    .contact-form button:hover { background-color: #e76f51; }
+    .contact-info { margin-top: 2rem; text-align: center; font-size: 1.1rem; }
+    .contact-info p { margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo"> AlUla</div>
+    <nav class="nav">
+      <a href="index.php">Home</a>
+      <a href="about.php">About AlUla</a>
+      <a href="events.php">Events</a>
+      <a href="activities.php">Activities</a>
+      <a href="contact.php">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero contact-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <p class="subtitle">We'd love to hear from you</p>
+      <h1 class="title">Contact Us<br>Let’s Plan Your Visit to AlUla</h1>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>If you have any questions or would like to know more about AlUla, feel free to reach out to us using the form below or through our contact details.</p>
+
+      <form class="contact-form" method="POST" action="process_contact.php">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> info@experiencealula.com</p>
+        <p><strong>Phone:</strong> +966 123 456 789</p>
+        <p><strong>Location:</strong> AlUla, Saudi Arabia</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AlUla, All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

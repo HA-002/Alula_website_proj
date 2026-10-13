@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Trip - AlUla</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">AlUla</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="About.html">About AlUla</a>
+      <a href="events.html">Events</a>
+     <a href="Activities.html">Activities</a>
+        <a href="contact.html">Contac us</a>
+    </nav>
+    <a href="book.html" class="cta-button">Book Your Trip</a>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="title">Plan Your Adventure<br>Book Your Trip to AlUla</h1>
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <div class="container">
+      <h2>Booking Form</h2>
+      <form class="booking-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select id="destination" name="destination" required>
+            <option value="">-- Select --</option>
+            <option value="Hegra">Hegra</option>
+            <option value="Elephant Rock">Elephant Rock</option>
+            <option value="Old Town">Old Town</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Travel Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <input type="number" id="guests" name="guests" min="1" required />
+        </div>
+
+        <button type="submit" class="cta-button">Submit Booking</button>
+      </form>
+    </div>
+  </section>
+    
+</body>
+</html>

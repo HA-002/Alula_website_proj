@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events - AlUla</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+   
+    
+  </style>
+</head>
+    
+<body>
+  <header class="header">
+    <div class="logo"> AlUla</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About AlUla</a>
+      <a href="events.html">Events</a>
+      <a href="activities.html">Activities</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <p class="subtitle">Experience Culture, Music, and Adventure</p>
+      <h1 class="title">Events in AlUla<br>Festivals, Shows, and More</h1>
+    </div>
+  </section>
+
+  <section class="events-section">
+    <div class="container">
+      <div class="tabs-container">
+        <button class="tab-button active" data-tab="Upcoming Events">Upcoming Events</button>
+        <button class="tab-button" data-tab="Festivals">Festivals</button>
+        <button class="tab-button" data-tab="Exhibitions">Exhibitions</button>
+      </div>
+
+      <!-- Sample content: Repeat as needed -->
+      <div class="events-tab active" data-tab="Upcoming Events">
+          
+        <div class="event-card">
+             <!-- Source: visitsaudi.com -->
+            <!-- Source: experiencealula.com -->
+            <!-- Source: poloplus10.com -->
+          <img src="event1.jpg" alt="Event Name" class="event-image" />
+          <div class="event-details">
+            <h3>Desert Music Festival</h3>
+            <p><strong>Date:</strong> June 15, 2025</p>
+            <p>Enjoy unforgettable performances in the heart of the AlUla desert.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="events-tab" data-tab="Festivals">
+          
+        <div class="event-card">
+            <!-- Source: visitsaudi.com -->
+            <!-- Source: experiencealula.com -->
+          <img src="festival.jpg" alt="Festival" class="event-image" />
+          <div class="event-details">
+            <h3>Heritage Festival</h3>
+            <p><strong>Date:</strong> October 1, 2025</p>
+            <p>Celebrate AlUla's history with local crafts, music, and food.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="events-tab" data-tab="Exhibitions">
+          
+        <div class="event-card">
+           <!-- Source: visitsaudi.com -->
+           <!-- Source: experiencealula.com -->
+            <!-- Source: alamy.com -->
+          <img src="exhibition.jpg" alt="Exhibition" class="event-image" />
+          <div class="event-details">
+            <h3>Ancient Artifacts Exhibition</h3>
+            <p><strong>Date:</strong> August 10, 2025</p>
+            <p>Discover the rich archeological treasures of AlUla.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AlUla, All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const tabs = document.querySelectorAll('.events-tab');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selected = btn.dataset.tab;
+        tabs.forEach(tab => {
+          tab.classList.remove('active');
+          if (tab.dataset.tab === selected) {
+            tab.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
