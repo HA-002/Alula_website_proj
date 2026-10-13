@@ -131,7 +131,7 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 كروت في كل صف */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 2rem;
 }
@@ -175,10 +175,10 @@ body {
   color: #666;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* عدد الأسطر */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  max-height: 3rem; /* تقريبًا سطرين */
+  max-height: 3rem;
   position: relative;
 }
 

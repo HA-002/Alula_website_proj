@@ -1,11 +1,9 @@
 <?php
-// الاتصال بقاعدة البيانات
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// التحقق من إرسال النموذج
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $item_id = $_POST['item_id'] ?? '';
     $category = $_POST['category'] ?? '';

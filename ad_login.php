@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// الاتصال بقاعدة البيانات
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -10,7 +9,6 @@ if ($conn->connect_error) {
 $username = $_POST['Username'];
 $password = $_POST['Password'];
 
-// التحقق من وجود المستخدم وكلمة المرور كما هي (بدون تشفير)
 $stmt = $conn->prepare("SELECT * FROM admin WHERE Username = ? AND Password = ?");
 $stmt->bind_param("ss", $username, $password);
 $stmt->execute();

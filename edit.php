@@ -1,11 +1,9 @@
 <?php
-// الاتصال بقاعدة البيانات
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// التحقق من إرسال النموذج
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['item_id'] ?? '';
     $category = $_POST['category'] ?? '';
@@ -14,13 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event_type = $_POST['event_type'] ?? null;
     $image_url = '';
 
-    // التحقق من المعطيات
     if (empty($id)  empty($category)  empty($title) || empty($description)) {
         header("Location: admin.php?status=error");
         exit;
     }
 
-    // التعامل مع الصورة
     if (!empty($_FILES['image']['name'])) {
         $uploadDir = "uploads/";
         $imageName = basename($_FILES["image"]["name"]);
@@ -31,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image_url = $_POST['image_url'];
     }
 
-    // جملة SQL حسب الفئة
     if ($category === 'events') {
         $sql = "UPDATE events SET name = ?, description = ?, image = ?, event_type = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);

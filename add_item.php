@@ -1,5 +1,4 @@
 <?php
-// الاتصال بقاعدة البيانات
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -28,12 +27,10 @@ if (!empty($_FILES['image']['name'])) {
     $image_url = $_POST['image_url'];
 }
 
-// إذا كانت الفئة هي events، سنضيف الفعالية في جدول events
 if ($_POST['category'] === 'events') {
     $stmt = $conn->prepare("INSERT INTO events (title, description, image, event_type, categoryID) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssi", $title, $description, $image_url, $event_type, $categoryID);
 }
-// إذا كانت الفئة هي activity، سنضيف النشاط في جدول activities
 elseif ($_POST['category'] === 'activity') {
     $stmt = $conn->prepare("INSERT INTO activities (title, description, image, categoryID) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("sssi", $title, $description, $image_url, $categoryID);

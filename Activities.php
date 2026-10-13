@@ -1,11 +1,9 @@
 <?php
-// الاتصال بقاعدة البيانات
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// استعلام لجلب الأنشطة
 $sql = "SELECT * FROM activities WHERE categoryID = 2";
 $result = $conn->query($sql);
 ?>

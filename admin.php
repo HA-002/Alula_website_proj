@@ -211,13 +211,12 @@ $messages = [
   </div>
 </div>
 <script>
-  // إخفاء رسالة التنبيه بعد 3 ثوانٍ
   window.addEventListener('DOMContentLoaded', () => {
     const alertBox = document.querySelector('.alert');
     if (alertBox) {
       setTimeout(() => {
         alertBox.style.display = 'none';
-      }, 3000); // 3000 ميلي ثانية = 3 ثواني
+      }, 3000);
     }
   });
 </script>

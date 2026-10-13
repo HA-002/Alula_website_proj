@@ -1,18 +1,15 @@
 <?php
 
-// الاتصال بقاعدة البيانات
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// جلب الفعاليات من قاعدة البيانات
 $sql = "SELECT events.*, category.name AS category_name 
         FROM events 
         INNER JOIN category ON events.categoryID = category.ID";
 $result = $conn->query($sql);
 
-// تصنيف الفعاليات حسب النوع
 $events = [
   'Upcoming Events' => [],
   'Festivals' => [],
