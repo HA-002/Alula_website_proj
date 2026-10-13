@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event_type = $_POST['event_type'] ?? null;
     $image_url = '';
 
-    if (empty($id)  empty($category)  empty($title) || empty($description)) {
+    if (empty($id) || empty($category) || empty($title) || empty($description)) {
         header("Location: admin.php?status=error");
         exit;
     }
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($category === 'events') {
-        $sql = "UPDATE events SET name = ?, description = ?, image = ?, event_type = ? WHERE id = ?";
+        $sql = "UPDATE events SET title = ?, description = ?, image = ?, event_type = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssssi", $title, $description, $image_url, $event_type, $id);
     } elseif ($category === 'activity') {
