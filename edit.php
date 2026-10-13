@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (empty($_SESSION['admin_logged_in'])) {
+    header('Location: login.php');
+    exit;
+}
 $conn = new mysqli('localhost', 'root', '', 'alula');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

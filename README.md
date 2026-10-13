@@ -37,16 +37,23 @@ html/                                                                           
 The code connects with the default XAMPP account (`root`, empty password). Change it in each PHP file if your setup differs.
 
 ## Demo Admin Account
-The sample database contains a demo admin (`admin` / `12345`) for local testing only. Change it before using this anywhere real.
+The sample database contains a demo admin (`admin` / `12345`) for local testing only. The password is stored as a bcrypt hash. Change it before using this anywhere real.
 
-## Known Limitations
+## Security Improvements Applied
+- Admin passwords are hashed with `password_hash()` and checked with `password_verify()`; no plain-text passwords are stored.
+- The login looks the admin up by username with a prepared statement, then verifies the password, and regenerates the session ID after a successful login.
+- `admin.php`, `add_item.php`, `edit.php` and `delete.php` check the admin session first and redirect to the login page if it is missing.
+- Database queries that use form or URL values use prepared statements.
+
+## Still to Improve
 This is a learning project, not production software.
-- Admin passwords are stored and compared as plain text; they should be hashed (`password_hash`).
-- The admin pages (`admin.php`, `add_item.php`, `edit.php`, `delete.php`) do not check the login session, so they should be protected.
+- Add CSRF tokens to the admin forms.
+- Validate the type and size of uploaded images and rename them on upload.
+- Escape every value printed on the public pages with `htmlspecialchars()`.
+- Use a dedicated MySQL user instead of the default XAMPP `root` account.
 - Photos in `uploads/` come from public AlUla tourism material and belong to their owners; they are here for demonstration only.
 
 ## Next Steps
-- Hash passwords and protect every admin page with a session check
 - Add a search bar and rating averages on the list pages
 
 ## Screenshots
